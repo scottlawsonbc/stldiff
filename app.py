@@ -4,9 +4,7 @@ import flask
 from stl import mesh
 
 
-app = flask.Flask(__name__,
-    static_folder="static/dist",
-    template_folder="static")
+app = flask.Flask(__name__, static_folder="static/dist", template_folder="static")
 
 
 def diff(stl):
@@ -17,7 +15,6 @@ def diff(stl):
     ]
     for cmd in cmds:
         os.system(cmd)
-    # Compute volume of each region.
     for key in ('added', 'removed', 'unchanged'):
         vol, _, _ = mesh.Mesh.from_file(stl[key]).get_mass_properties()
         stl[key + '_volume'] = max(vol, 0)
