@@ -5,22 +5,22 @@ from stl import mesh
 
 
 app = flask.Flask(__name__,
-    static_folder="../static/dist",
-    template_folder="../static")
+    static_folder="static/dist",
+    template_folder="static")
 
 
 def diff(stl):
     cmds = [
-        f'./csgtool/csgtool subtract {stl["new"]} {stl["original"]} {stl["added"]}',
-        f'./csgtool/csgtool subtract {stl["original"]} {stl["new"]} {stl["removed"]}',
-        f'./csgtool/csgtool intersect {stl["new"]} {stl["original"]} {stl["unchanged"]}',
+        f'./bin/csgtool subtract {stl["new"]} {stl["original"]} {stl["added"]}',
+        f'./bin/csgtool subtract {stl["original"]} {stl["new"]} {stl["removed"]}',
+        f'./bin/csgtool intersect {stl["new"]} {stl["original"]} {stl["unchanged"]}',
     ]
     for cmd in cmds:
         os.system(cmd)
     # Compute volume of each region.
     for key in ('added', 'removed', 'unchanged'):
         vol, _, _ = mesh.Mesh.from_file(stl[key]).get_mass_properties()
-        stl[key + '_vcdolume'] = max(vol, 0)
+        stl[key + '_volume'] = max(vol, 0)
 
 
 @app.route('/')
@@ -42,4 +42,4 @@ def model(path):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
