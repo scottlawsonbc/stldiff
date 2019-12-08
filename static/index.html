@@ -12,11 +12,11 @@
         <br>
         <h5>File Info</h5>
         <div class="row">
-            <div class="col-1">New</div>
+            <div class="col-2">New</div>
             <div class="col"><pre>{{ stl['new'] }}</pre></div>
         </div>
         <div class="row">
-            <div class="col-1">Original</div>
+            <div class="col-2">Original</div>
             <div class="col"><pre>{{ stl['original'] }}</pre></div>
         </div>
         <canvas id="stlview" height=600 width=600></canvas>
@@ -25,15 +25,15 @@
       <div class="container">
         <h5>Diff</h5>
         <div class="row">
-            <div class="col-1 text-success">Added</div>
+            <div class="col-2 text-success">Added</div>
             <div class="col"><pre>{{ "%.2f"|format(stl['added_volume']|float) }} mm^3</pre></div>
         </div>
         <div class="row">
-            <div class="col-1 text-danger">Removed</div>
+            <div class="col-2 text-danger">Removed</div>
             <div class="col"><pre>{{ "%.2f"|format(stl['removed_volume']|float) }} mm^3</pre></div>
         </div>
         <div class="row">
-            <div class="col-1 text-muted">Unchanged</div>
+            <div class="col-2 text-muted">Unchanged</div>
             <div class="col"><pre>{{ "%.2f"|format(stl['unchanged_volume']|float) }} mm^3</pre></div>
         </div>
       </div>
