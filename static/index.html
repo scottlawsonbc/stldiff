@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <title>stldiff</title>
+  </head>
+  <body>
+    <div class="container" id="content">
+      <div class="container">
+        <h1 class="text-primary">stldiff</h1>
+        <h5>Simple STL diffing tool</h5>
+        <br>
+        <h5>File Info</h5>
+        <div class="row">
+            <div class="col-1">New</div>
+            <div class="col"><pre>{{ stl['new'] }}</pre></div>
+        </div>
+        <div class="row">
+            <div class="col-1">Original</div>
+            <div class="col"><pre>{{ stl['original'] }}</pre></div>
+        </div>
+        <canvas id="stlview" height=600 width=600></canvas>
+      </div>
+      <br>
+      <div class="container">
+        <h5>Diff</h5>
+        <div class="row">
+            <div class="col-1 text-success">Added</div>
+            <div class="col"><pre>{{ "%.2f"|format(stl['added_volume']|float) }} mm^3</pre></div>
+        </div>
+        <div class="row">
+            <div class="col-1 text-danger">Removed</div>
+            <div class="col"><pre>{{ "%.2f"|format(stl['removed_volume']|float) }} mm^3</pre></div>
+        </div>
+        <div class="row">
+            <div class="col-1 text-muted">Unchanged</div>
+            <div class="col"><pre>{{ "%.2f"|format(stl['unchanged_volume']|float) }} mm^3</pre></div>
+        </div>
+      </div>
+    </div>
+    <script src="dist/bundle.js" type="text/javascript"></script>
+  </body>
+</html>
