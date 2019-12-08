@@ -2,7 +2,7 @@
 
 A simple STL diffing tool created by Scott Lawson.
 
-Try out a [live demo here](https://stldiff.herokuapp.com/).
+Try out a [live demo here](https://stldiff.herokuapp.com/). The app may take up to 30 seconds to wake up if it hasn't been run in a while (Heroku free tier deployment).
 
 The demo app shows the diffing output on an example STL. It isn't currently possible to upload custom files. More time would be needed for this feature.
 
