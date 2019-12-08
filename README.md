@@ -17,6 +17,6 @@ The app is just under 150 lines of code in total. Writing the app took around fo
 
 The interactive 3D model viewer was built using [three.js](https://threejs.org/).
 
-STL diffing functionality is provided by the excellent [csgtool](https://github.com/sshirokov/csgtool). This tool makes it easy to perform constructive solid geometry operations on STL files.
+STL diffing functionality is provided by [csgtool](https://github.com/sshirokov/csgtool). This tool makes it easy to perform constructive solid geometry operations on STL files.
 
 A great deal of valuable advice was found in this [GitHub post about 3D file diffs](https://github.blog/2013-09-17-3d-file-diffs/).
