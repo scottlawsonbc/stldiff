@@ -16,6 +16,6 @@
     "popper": "^1.0.1",
     "three": "^0.111.0",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.12"
   }
 }
